@@ -1,6 +1,6 @@
 "use strict";
 
-JSON.parse = function(options) {
+JSON.parse = (function(options) {
   if (BigNumber == null) {
     console.error("can not find window.BigNumber!");
   }
@@ -257,7 +257,7 @@ JSON.parse = function(options) {
         })({ "": result }, "")
       : result;
   };
-};
+}(JSON.parse.options));
 
 JSON.stringify = function() {
   if (BigNumber == null) {
